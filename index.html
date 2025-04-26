@@ -4,23 +4,103 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Oxnya Group - Cartes Graphiques RTX</title>
   <style>
-    body { font-family: 'Segoe UI', sans-serif; margin: 0; background-color: #f9f9f9; color: #333; }
-    header { background-color: #20232a; color: #fff; padding: 30px 20px; text-align: center; }
-    nav { background: #333; padding: 12px; text-align: center; }
-    nav a { color: #fff; margin: 0 20px; text-decoration: none; font-weight: 600; }
-    .container { padding: 40px 20px; max-width: 1200px; margin: auto; }
-    .card { background: #fff; padding: 25px; margin: 25px 0; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
-    footer { background: #20232a; color: #fff; padding: 20px; text-align: center; margin-top: 50px; }
-    h2 { border-bottom: 3px solid #ff9800; padding-bottom: 10px; margin-bottom: 20px; }
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      background: linear-gradient(to bottom, #f0f0f0, #ffffff);
+      color: #333;
+    }
+    header {
+      background: linear-gradient(to right, #1f2937, #111827);
+      color: #fff;
+      padding: 40px 20px;
+      text-align: center;
+      animation: fadeIn 1s ease;
+    }
+    nav {
+      background: #111827;
+      padding: 14px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    nav a {
+      color: #fff;
+      margin: 0 18px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #f59e0b;
+    }
+    .container {
+      padding: 50px 20px;
+      max-width: 1200px;
+      margin: auto;
+      animation: fadeInUp 1s ease;
+    }
+    .card {
+      background: #fff;
+      padding: 30px;
+      margin: 30px 0;
+      border-radius: 14px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 28px rgba(0,0,0,0.15);
+    }
+    footer {
+      background: linear-gradient(to right, #1f2937, #111827);
+      color: #fff;
+      padding: 25px;
+      text-align: center;
+      margin-top: 60px;
+    }
+    h2 {
+      border-bottom: 3px solid #f59e0b;
+      padding-bottom: 10px;
+      margin-bottom: 25px;
+    }
     ul { padding-left: 20px; }
-    .important { background: #ffe8e8; padding: 20px; border-left: 6px solid #c62828; margin-bottom: 25px; border-radius: 6px; }
-    button { background: #ff9800; color: #fff; border: none; padding: 12px 25px; border-radius: 5px; font-size: 16px; cursor: pointer; margin-top: 20px; }
-    button:hover { background: #fb8c00; }
+    .important {
+      background: #ffe8e8;
+      padding: 20px;
+      border-left: 6px solid #c62828;
+      margin-bottom: 25px;
+      border-radius: 8px;
+    }
+    button {
+      background: #f59e0b;
+      color: #fff;
+      border: none;
+      padding: 14px 28px;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 20px;
+      transition: background 0.3s;
+    }
+    button:hover {
+      background: #fb923c;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
   </style>
 </head>
 <body><header>
   <h1>Oxnya Group</h1>
-  <p>Votre spécialiste des cartes graphiques RTX série 5000 neuves et garanties</p>
+  <p>Votre spécialiste cartes graphiques RTX série 5000 neuves et garanties</p>
 </header><nav>
   <a href="#accueil">Accueil</a>
   <a href="#services">Services</a>
@@ -29,43 +109,42 @@
 </nav><div class="container">  <section id="accueil">
     <div class="card">
       <h2>Bienvenue chez Oxnya Group</h2>
-      <p>Nous sommes une structure spécialisée dans la vente de **cartes graphiques NVIDIA RTX série 5000 neuves sous blister**, avec **facture nominative TTC** et **garantie constructeur 24 mois**.</p>
-      <p>Les stocks évoluant en permanence et selon arrivages, **merci de nous contacter directement** pour obtenir la liste actualisée et les tarifs en cours.</p>
+      <p>Oxnya Group, c'est votre partenaire dédié à la vente de cartes graphiques RTX série 5000 neuves sous blister, avec facture TTC nominative et garantie constructeur 24 mois.</p>
+      <p>Les références évoluant en permanence, nous vous invitons à nous contacter directement pour connaître les disponibilités et tarifs en cours.</p>
       <button onclick="document.location='#contact'">Demander les disponibilités</button>
     </div>
   </section>  <section id="services">
     <div class="card">
       <h2>Nos Services</h2>
       <ul>
-        <li>Cartes graphiques neuves sous blister</li>
-        <li>Facture TTC nominative et garantie constructeur de 24 mois</li>
-        <li>Expédition rapide sous 24/48h avec livraison suivie Chronopost 13</li>
-        <li>Paiement sécurisé : virement instantané, Revolut, PayPal ou lien Assoconnect</li>
-        <li>Conseil personnalisé et devis gratuit</li>
+        <li>Produits neufs sous blister</li>
+        <li>Facture TTC nominative et garantie constructeur 24 mois</li>
+        <li>Expédition rapide sous 24/48h (Chronopost 13)</li>
+        <li>Paiement sécurisé : virement instantané, Revolut, PayPal ou Assoconnect</li>
+        <li>Devis et conseil personnalisés sur demande</li>
       </ul>
     </div>
   </section>  <section id="modalites">
     <div class="card">
-      <h2>Conditions et Fonctionnement</h2>
+      <h2>Conditions de Vente</h2>
       <div class="important">
-        📌 **Important :** Prix fermes et non négociables. Pas de propositions farfelues. Contacts sérieux uniquement.
+        📌 <strong>Important :</strong> Prix fermes et définitifs. Pas de négociation. Contacts sérieux uniquement.
       </div>
       <ul>
-        <li>Stocks mis à jour sur simple demande par message</li>
-        <li>Produits garantis neufs sous blister avec facture</li>
-        <li>Aucune négociation de prix possible</li>
-        <li>Commande validée après réception du paiement</li>
-        <li>Expédition Chronopost 13 ou retrait en main propre possible</li>
+        <li>Stocks mis à jour sur demande</li>
+        <li>Aucune négociation de prix acceptée</li>
+        <li>Commande validée uniquement après réception du paiement</li>
+        <li>Livraison sécurisée sous 24/48h après validation</li>
       </ul>
     </div>
   </section>  <section id="contact">
     <div class="card">
       <h2>Nous Contacter</h2>
-      <p>Email : contact@oxnya-group.fr</p>
+      <p>Email : <a href="mailto:contact@oxnya-group.com">contact@oxnya-group.com</a></p>
       <p>Téléphone : 07 80 16 37 73</p>
       <p>SIRET : 923 533 186 00014</p>
       <p>Président : Nolhan Vella</p>
-      <button onclick="document.location='mailto:contact@oxnya-group.fr'">Envoyer un email</button>
+      <button onclick="document.location='mailto:contact@oxnya-group.com'">Envoyer un email</button>
     </div>
   </section></div><footer>
   <p>&copy; 2025 Oxnya Group - Tous droits réservés.</p>
