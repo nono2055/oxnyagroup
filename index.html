@@ -204,7 +204,7 @@
     <p>&copy; 2025 Oxnya Group - Tous droits réservés.</p>
   </footer>
 <form id="callForm">
-  <input type="text" id="phone" placeholder="Numéro à appeler">
+  <input type="text" id="phone" placeholder="Numéro à appeler (format international)">
   <button type="submit">Appeler</button>
 </form>
 
@@ -212,26 +212,19 @@
 
 <script>
   document.getElementById("callForm").addEventListener("submit", function(e) {
-  e.preventDefault();
-  var phoneNumber = document.getElementById("phone").value;
-  var anumber = "oxnya_group"; // ton SIP connecté Zoiper
-  var bnumber = phoneNumber; // numéro qu'on veut appeler
-  var callLink = "https://api.ippi.com/sip-activity/start-call?login=oxnya_group&apiPassword=cc24NOLHAN*&anumber=" + anumber + "&bnumber=" + bnumber;
-  document.getElementById("phone-link").textContent = callLink;
+    e.preventDefault();
+    var phoneNumber = document.getElementById("phone").value;
+    
+    // Assurer que le numéro est dans le bon format international (+33 pour la France)
+    if (phoneNumber[0] === '0') {
+      phoneNumber = '+33' + phoneNumber.slice(1);
+    }
 
-  fetch(callLink)
-    .then(response => response.json())
-    .then(data => {
-      if (data.code === "OK") {
-        alert("Appel lancé avec succès !");
-      } else {
-        alert("Erreur : " + data.data);
-      }
-    })
-    .catch(error => {
-      console.error("Erreur réseau :", error);
-    });
-});
+    var bnumber = "Oxnya-Group"; // ton compte SIP sans @ippi.com
+    var callLink = "https://api.ippi.com/sip-activity/start-call?login=oxnya_group&apiPassword=cc24NOLHAN*&anumber=" + phoneNumber + "&bnumber=" + bnumber;
+    document.getElementById("phone-link").textContent = callLink;
+    window.open(callLink, "_blank");
+  });
 </script>
 </body>
 </html>
