@@ -167,41 +167,6 @@
           <li>Expédition rapide sous 24/48h (Chronopost 13)</li>
           <li>Paiement sécurisé : virement instantané, Revolut, PayPal ou Assoconnect</li>
           <li>Devis et conseil personnalisés sur demande</li>
-        <section id="formules">
-  <div class="card">
-    <h2>Nos Formules Oxnya Access</h2>
-    <div>
-      <h3>Starter – 5€/mois</h3>
-      <ul>
-        <li>5 diagnostics PC/mois</li>
-        <li>Conseils config illimités</li>
-      </ul>
-    </div>
-    <hr>
-    <div>
-      <h3>Premium – 9,99€/mois</h3>
-      <ul>
-        <li>10 diagnostics PC/mois</li>
-        <li>Conseils config illimités + audit de setup actuel</li>
-        <li>Support prioritaire</li>
-      </ul>
-    </div>
-    <hr>
-    <div>
-      <h3>Pro Max – 19,99€/mois</h3>
-      <ul>
-        <li>Diagnostics illimités</li>
-        <li>Conseils config illimités + audit complet</li>
-        <li>Recommandations software (anti-virus, optimisation…)</li>
-        <li>-5% sur la boutique</li>
-        <li>Support ultra-prioritaire</li>
-        <li>Rapport mensuel d’état du matos + offres exclusives</li>
-      </ul>
-    </div>
-    <hr>
-    <button onclick="document.location='#contact'">Souscrire une formule</button>
-  </div>
-</section>
         </ul>
       </div>
     </section>
@@ -222,8 +187,13 @@
     <section id="contact">
       <div class="card">
         <h2>Nous Contacter</h2>
+        <form id="callForm">
+          <label for="phone">Entrez votre numéro pour un rappel automatique :</label>
+          <input type="tel" id="phone" name="phone" required placeholder="Votre numéro">
+          <button type="submit">Demander un rappel</button>
+        </form>
         <p>Email : <a href="mailto:contact@oxnya-group.com">contact@oxnya-group.com</a></p>
-        <p>Téléphone : https://api.ippi.com/sip-activity/start-call?login=oxnya_group&apiPassword=cc24NOLHAN*&anumber=Anumber&bnumber=Bnumber</p>
+        <p>Téléphone : Formulaire en bas :)
         <p>SIRET : 923 533 186 00014</p>
         <p>Président : Nolhan Vella</p>
         <button onclick="document.location='mailto:contact@oxnya-group.com'">Envoyer un email</button>
@@ -233,5 +203,15 @@
   <footer>
     <p>&copy; 2025 Oxnya Group - Tous droits réservés.</p>
   </footer>
+
+  <script>
+    document.getElementById("callForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      var phoneNumber = document.getElementById("phone").value;
+      var callLink = "https://api.ippi.com/sip-activity/start-call?login=oxnya_group&apiPassword=cc24NOLHAN*&anumber=" + phoneNumber + "&bnumber=VotreNuméroDeRappel";
+      document.getElementById("phone-link").textContent = callLink;
+      window.open(callLink, "_blank");
+    });
+  </script>
 </body>
 </html>
