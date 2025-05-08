@@ -212,13 +212,26 @@
 
 <script>
   document.getElementById("callForm").addEventListener("submit", function(e) {
-    e.preventDefault();
-    var phoneNumber = document.getElementById("phone").value;
-    var bnumber = "Oxnya-Group"; // ton compte SIP sans @ippi.com
-    var callLink = "https://api.ippi.com/sip-activity/start-call?login=oxnya_group&apiPassword=cc24NOLHAN*&anumber=" + phoneNumber + "&bnumber=" + bnumber;
-    document.getElementById("phone-link").textContent = callLink;
-    window.open(callLink, "_blank");
-  });
+  e.preventDefault();
+  var phoneNumber = document.getElementById("phone").value;
+  var anumber = "oxnya_group"; // ton SIP connecté Zoiper
+  var bnumber = phoneNumber; // numéro qu'on veut appeler
+  var callLink = "https://api.ippi.com/sip-activity/start-call?login=oxnya_group&apiPassword=cc24NOLHAN*&anumber=" + anumber + "&bnumber=" + bnumber;
+  document.getElementById("phone-link").textContent = callLink;
+
+  fetch(callLink)
+    .then(response => response.json())
+    .then(data => {
+      if (data.code === "OK") {
+        alert("Appel lancé avec succès !");
+      } else {
+        alert("Erreur : " + data.data);
+      }
+    })
+    .catch(error => {
+      console.error("Erreur réseau :", error);
+    });
+});
 </script>
 </body>
 </html>
