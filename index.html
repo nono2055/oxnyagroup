@@ -215,7 +215,7 @@
   document.getElementById("callForm").addEventListener("submit", function(e) {
     e.preventDefault();
     var phoneNumber = document.getElementById("phone").value;
-    var callLink = "https://api.ippi.com/sip-activity/start-call?login=oxnya_group&apiPassword=cc24NOLHAN*&anumber=" + phoneNumber + "&bnumber=VotreNuméroDeRappel";
+    var callLink = "https://api.ippi.com/sip-activity/start-call?login=oxnya_group&apiPassword=cc24NOLHAN*&anumber=" + phoneNumber + "&bnumber=sip: Oxnya-group@sip.ippi.com";
     document.getElementById("phone-link").textContent = callLink;
     window.open(callLink, "_blank");
   });
