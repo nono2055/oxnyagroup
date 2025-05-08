@@ -204,11 +204,18 @@
     <p>&copy; 2025 Oxnya Group - Tous droits réservés.</p>
   </footer>
 
-  <<script>
+<form id="callForm">
+  <input type="text" id="phone" placeholder="Numéro à appeler">
+  <button type="submit">Appeler</button>
+</form>
+
+<p id="phone-link"></p>
+
+<script>
   document.getElementById("callForm").addEventListener("submit", function(e) {
     e.preventDefault();
     var phoneNumber = document.getElementById("phone").value;
-    var callLink = "https://api.ippi.com/sip-activity/start-call?login=oxnya_group&apiPassword=cc24NOLHAN*&anumber=VotreNumDeLigneIppi&bnumber=" + phoneNumber;
+    var callLink = "https://api.ippi.com/sip-activity/start-call?login=oxnya_group&apiPassword=cc24NOLHAN*&anumber=" + phoneNumber + "&bnumber=VotreNuméroDeRappel";
     document.getElementById("phone-link").textContent = callLink;
     window.open(callLink, "_blank");
   });
