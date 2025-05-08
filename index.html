@@ -204,7 +204,7 @@
     <p>&copy; 2025 Oxnya Group - Tous droits réservés.</p>
   </footer>
 <form id="callForm">
-  <input type="text" id="phone" placeholder="Numéro à appeler (ex: +33612345678)" required>
+  <input type="text" id="phone" placeholder="Numéro à appeler (+33612345678)" required>
   <button type="submit">Appeler</button>
 </form>
 
@@ -214,28 +214,29 @@
   document.getElementById("callForm").addEventListener("submit", function(e) {
     e.preventDefault();
 
-    // Récupération du numéro à appeler
     var phoneNumber = document.getElementById("phone").value.trim();
 
-    // Sécurité basique : vérifier qu'il y a quelque chose
     if (phoneNumber === "") {
-      document.getElementById("call-status").textContent = "Merci de saisir un numéro valide.";
+      document.getElementById("call-status").textContent = "Merci d'entrer un numéro.";
       return;
     }
 
-    // Construction du lien API IPPI sans @ dans bnumber
     var login = "oxnya_group";
     var apiPassword = "cc24NOLHAN*";
-    var aNumber = encodeURIComponent(phoneNumber); // encodage sécurité URL
-    var bNumber = login; // ton compte SIP sans @
+    var aNumber = encodeURIComponent(phoneNumber);
+    var bNumber = encodeURIComponent("TonNumSIPSans@"); // Genre "33612345678" pas de @
 
     var callLink = "https://api.ippi.com/sip-activity/start-call?login=" + login + "&apiPassword=" + encodeURIComponent(apiPassword) + "&anumber=" + aNumber + "&bnumber=" + bNumber;
 
-    // Afficher le lien (pour debug / logs)
-    document.getElementById("call-status").textContent = "Appel en cours : " + callLink;
-
-    // Ouvrir le lien API dans un nouvel onglet
-    window.open(callLink, "_blank");
+    // Lance la requête et affiche le résultat
+    fetch(callLink)
+      .then(r => r.json())
+      .then(data => {
+        document.getElementById("call-status").textContent = "Réponse : " + data.code + " / " + data.data;
+      })
+      .catch(err => {
+        document.getElementById("call-status").textContent = "Erreur : " + err;
+      });
   });
 </script>
 </body>
