@@ -204,39 +204,20 @@
     <p>&copy; 2025 Oxnya Group - Tous droits réservés.</p>
   </footer>
 <form id="callForm">
-  <input type="text" id="phone" placeholder="Numéro à appeler (+33612345678)" required>
+  <input type="text" id="phone" placeholder="Numéro à appeler">
   <button type="submit">Appeler</button>
 </form>
 
-<p id="call-status"></p>
+<p id="phone-link"></p>
 
 <script>
   document.getElementById("callForm").addEventListener("submit", function(e) {
     e.preventDefault();
-
-    var phoneNumber = document.getElementById("phone").value.trim();
-
-    if (phoneNumber === "") {
-      document.getElementById("call-status").textContent = "Merci d'entrer un numéro.";
-      return;
-    }
-
-    var login = "oxnya_group";
-    var apiPassword = "cc24NOLHAN*";
-    var aNumber = encodeURIComponent(phoneNumber);
-    var bNumber = encodeURIComponent("oxnya-group"); // Genre "33612345678" pas de @
-
-    var callLink = "https://api.ippi.com/sip-activity/start-call?login=" + login + "&apiPassword=" + encodeURIComponent(apiPassword) + "&anumber=" + aNumber + "&bnumber=" + bNumber;
-
-    // Lance la requête et affiche le résultat
-    fetch(callLink)
-      .then(r => r.json())
-      .then(data => {
-        document.getElementById("call-status").textContent = "Réponse : " + data.code + " / " + data.data;
-      })
-      .catch(err => {
-        document.getElementById("call-status").textContent = "Erreur : " + err;
-      });
+    var phoneNumber = document.getElementById("phone").value;
+    var bnumber = "Oxnya-Group"; // ton compte SIP sans @ippi.com
+    var callLink = "https://api.ippi.com/sip-activity/start-call?login=oxnya_group&apiPassword=cc24NOLHAN*&anumber=" + phoneNumber + "&bnumber=" + bnumber;
+    document.getElementById("phone-link").textContent = callLink;
+    window.open(callLink, "_blank");
   });
 </script>
 </body>
