@@ -9,22 +9,26 @@
     <h1>Appel via API IPPI</h1>
 
     <!-- Formulaire pour entrer le numéro à appeler -->
-  <form id="callForm">
-  <input type="text" id="phone" placeholder="Numéro à appeler">
-  <button type="submit">Appeler</button>
-</form>
-
-<p id="phone-link"></p>
-
-<script>
   document.getElementById("callForm").addEventListener("submit", function(e) {
-    e.preventDefault();
-    var phoneNumber = document.getElementById("phone").value;
-    var bnumber = "889766772"; // ton NUMERIC sans zéro ni espace
-    var callLink = "https://api.ippi.com/sip-activity/start-call?login=oxnya_group&apiPassword=cc24NOLHAN*&anumber=" + phoneNumber + "&bnumber=" + bnumber;
-    document.getElementById("phone-link").textContent = callLink;
-    window.open(callLink, "_blank");
-  });
-</script>
+  e.preventDefault();
+  var phoneNumber = document.getElementById("phone").value;
+  var anumber = "oxnya_group"; // ton SIP connecté Zoiper
+  var bnumber = phoneNumber; // numéro qu'on veut appeler
+  var callLink = "https://api.ippi.com/sip-activity/start-call?login=oxnya_group&apiPassword=cc24NOLHAN*&anumber=" + anumber + "&bnumber=" + bnumber;
+  document.getElementById("phone-link").textContent = callLink;
+
+  fetch(callLink)
+    .then(response => response.json())
+    .then(data => {
+      if (data.code === "OK") {
+        alert("Appel lancé avec succès !");
+      } else {
+        alert("Erreur : " + data.data);
+      }
+    })
+    .catch(error => {
+      console.error("Erreur réseau :", error);
+    });
+});
 </body>
 </html>
