@@ -10,53 +10,27 @@
 
     <!-- Formulaire pour entrer le numéro à appeler -->
     <form id="callForm">
-        <label for="phone">Numéro à appeler (format international sans +):</label><br>
-        <input type="text" id="phone" placeholder="Numéro à appeler" required>
-        <button type="submit">Appeler</button>
-    </form>
+  <input type="text" id="phone" placeholder="Numéro à appeler (format international)">
+  <button type="submit">Appeler</button>
+</form>
 
-    <p id="status"></p>
+<p id="phone-link"></p>
 
-    <script>
-        // Ajout d'un listener pour le formulaire
-        document.getElementById("callForm").addEventListener("submit", function(e) {
-            e.preventDefault(); // Empêche l'envoi normal du formulaire
-            
-            // Récupère le numéro à appeler
-            var phoneNumber = document.getElementById("phone").value;
-            
-            // Vérifie que le numéro contient uniquement des chiffres et n'est pas vide
-            if (!/^\d+$/.test(phoneNumber)) {
-                document.getElementById("status").textContent = "Numéro invalide, veuillez entrer un numéro au format international sans le +.";
-                return;
-            }
-            
-            var bnumber = "0889766772";  // Remplacer avec ton numéro SIP ou autre numéro destinataire
-            var apiPassword = "cc24NOLHAN*";  // Le mot de passe Web Rappel
-            var login = "oxnya_group";  // Ton login IPPI
-            
-            // Formule l'URL de l'API avec les paramètres
-            var apiUrl = `https://api.ippi.com/sip-activity/start-call?login=${login}&apiPassword=${apiPassword}&anumber=${phoneNumber}&bnumber=${bnumber}`;
-            
-            // Affiche l'URL pour vérifier que tout est bien configuré
-            document.getElementById("status").textContent = `Envoi de la requête... URL : ${apiUrl}`;
-            
-            // Envoie la requête
-            fetch(apiUrl)
-                .then(response => response.json())
-                .then(data => {
-                    // Vérifie la réponse de l'API
-                    if (data.code === "OK") {
-                        document.getElementById("status").textContent = "Appel lancé avec succès.";
-                    } else {
-                        document.getElementById("status").textContent = `Erreur: ${data.data}`;
-                    }
-                })
-                .catch(error => {
-                    // Si une erreur se produit pendant la requête
-                    document.getElementById("status").textContent = "Erreur lors de l'appel API : " + error;
-                });
-        });
-    </script>
+<script>
+  document.getElementById("callForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+    var phoneNumber = document.getElementById("phone").value;
+    
+    // Assurer que le numéro est dans le bon format international (+33 pour la France)
+    if (phoneNumber[0] === '0') {
+      phoneNumber = '+33' + phoneNumber.slice(1);
+    }
+
+    var bnumber = "Oxnya-Group"; // ton compte SIP sans @ippi.com
+    var callLink = "https://api.ippi.com/sip-activity/start-call?login=oxnya_group&apiPassword=cc24NOLHAN*&anumber=" + phoneNumber + "&bnumber=" + bnumber;
+    document.getElementById("phone-link").textContent = callLink;
+    window.open(callLink, "_blank");
+  });
+</script>
 </body>
 </html>
