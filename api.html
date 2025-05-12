@@ -9,8 +9,8 @@
     <h1>Appel via API IPPI</h1>
 
     <!-- Formulaire pour entrer le numéro à appeler -->
-    <form id="callForm">
-  <input type="text" id="phone" placeholder="Numéro à appeler (format international)">
+  <form id="callForm">
+  <input type="text" id="phone" placeholder="Numéro à appeler">
   <button type="submit">Appeler</button>
 </form>
 
@@ -20,13 +20,7 @@
   document.getElementById("callForm").addEventListener("submit", function(e) {
     e.preventDefault();
     var phoneNumber = document.getElementById("phone").value;
-    
-    // Assurer que le numéro est dans le bon format international (+33 pour la France)
-    if (phoneNumber[0] === '0') {
-      phoneNumber = '+33' + phoneNumber.slice(1);
-    }
-
-    var bnumber = "Oxnya-Group"; // ton compte SIP sans @ippi.com
+    var bnumber = "889766772"; // ton NUMERIC sans zéro ni espace
     var callLink = "https://api.ippi.com/sip-activity/start-call?login=oxnya_group&apiPassword=cc24NOLHAN*&anumber=" + phoneNumber + "&bnumber=" + bnumber;
     document.getElementById("phone-link").textContent = callLink;
     window.open(callLink, "_blank");
