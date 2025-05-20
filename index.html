@@ -1,230 +1,69 @@
-<!DOCTYPE html>
-<html lang="fr">
+<!DOCTYPE html><html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <meta name="description" content="Oxnya Group : vente de cartes graphiques RTX série 5000 neuves, garanties 24 mois et livraison rapide.">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Oxnya Group - Cartes Graphiques RTX Et Services</title>
+  <title>Oxnya Group - Spécialiste RTX 5000 & Hardware</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-    body {
-      font-family: 'Roboto', sans-serif;
-      margin: 0;
-      background: linear-gradient(to bottom, #f0f0f0, #ffffff);
-      color: #333;
-      overflow-x: hidden;
-    }
-    header {
-      background: linear-gradient(to right, #1f2937, #111827);
-      color: #fff;
-      padding: 40px 20px;
-      text-align: center;
-      animation: fadeInHeader 2s ease;
-    }
-    header h1 {
-      font-size: 2.5rem;
-      margin-bottom: 10px;
-      animation: slideInLeft 1s ease-out;
-    }
-    header p {
-      font-size: 1.2rem;
-      animation: slideInRight 1.5s ease-out;
-    }
-    nav {
-      background: #111827;
-      padding: 14px;
-      text-align: center;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      animation: fadeInNav 1.5s ease;
-    }
-    nav a {
-      color: #fff;
-      margin: 0 18px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 1.1rem;
-      transition: color 0.3s;
-    }
-    nav a:hover {
-      color: #f59e0b;
-    }
-    .container {
-      padding: 50px 20px;
-      max-width: 1200px;
-      margin: auto;
-      animation: fadeInUp 2s ease;
-    }
-    .card {
-      background: #fff;
-      padding: 30px;
-      margin: 30px 0;
-      border-radius: 14px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-      transition: transform 0.3s, box-shadow 0.3s;
-      opacity: 0;
-      animation: fadeInCard 1.5s forwards;
-    }
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 12px 28px rgba(0,0,0,0.15);
-    }
-    footer {
-      background: linear-gradient(to right, #1f2937, #111827);
-      color: #fff;
-      padding: 25px;
-      text-align: center;
-      margin-top: 60px;
-      animation: fadeInFooter 2s ease;
-    }
-    h2 {
-      border-bottom: 3px solid #f59e0b;
-      padding-bottom: 10px;
-      margin-bottom: 25px;
-      font-size: 2rem;
-    }
-    ul { padding-left: 20px; }
-    .important {
-      background: #ffe8e8;
-      padding: 20px;
-      border-left: 6px solid #c62828;
-      margin-bottom: 25px;
-      border-radius: 8px;
-    }
-    button {
-      background: #f59e0b;
-      color: #fff;
-      border: none;
-      padding: 14px 28px;
-      border-radius: 6px;
-      font-size: 16px;
-      cursor: pointer;
-      margin-top: 20px;
-      transition: background 0.3s;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    }
-    button:hover {
-      background: #fb923c;
-      box-shadow: 0 6px 14px rgba(0,0,0,0.15);
-    }
-    @keyframes fadeInHeader {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-    @keyframes fadeInNav {
-      from { opacity: 0; transform: translateY(-50px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes slideInLeft {
-      from { transform: translateX(-50px); opacity: 0; }
-      to { transform: translateX(0); opacity: 1; }
-    }
-    @keyframes slideInRight {
-      from { transform: translateX(50px); opacity: 0; }
-      to { transform: translateX(0); opacity: 1; }
-    }
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes fadeInCard {
-      from { opacity: 0; transform: translateY(50px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes fadeInFooter {
-      from { opacity: 0; transform: translateY(50px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
+    body { margin:0; font-family: Arial, sans-serif; background-color: #0f0f0f; color: #f0f0f0; }
+    header, footer { background:#1a1a1a; padding:20px; text-align:center; }
+    nav a { color:#f0f0f0; margin: 0 15px; text-decoration:none; }
+    .hero { background: url('banniere-rtx5000.jpg') no-repeat center/cover; padding:100px 20px; text-align:center; }
+    .hero h1 { font-size: 50px; margin:0; }
+    .section { padding:40px 20px; max-width:1200px; margin:auto; }
+    .produit { display:inline-block; width:300px; background:#1a1a1a; margin:15px; padding:20px; border-radius:8px; }
+    .produit img { width:100%; border-radius:4px; }
+    footer p { margin:5px 0; }
+    .btn { background:#0d6efd; color:#fff; padding:10px 20px; border:none; border-radius:5px; text-decoration:none; }
   </style>
 </head>
 <body>
   <header>
     <h1>Oxnya Group</h1>
-    <p>Votre spécialiste cartes graphiques RTX série 5000 neuves et garanties</p>
-  </header>
-  <nav>
-    <a href="#accueil">Accueil</a>
-    <a href="#services">Services</a>
-    <a href="#modalites">Conditions</a>
-    <a href="#contact">Contact</a>
-  </nav>
-  <div class="container">
-    <section id="accueil">
-      <div class="card">
-        <h2>Bienvenue chez Oxnya Group</h2>
-        <p>Oxnya Group, c'est votre partenaire dédié à la vente de cartes graphiques RTX série 5000 neuves sous blister, avec facture TTC nominative et garantie constructeur 24 mois.</p>
-        <p>Les références évoluant en permanence, nous vous invitons à nous contacter directement pour connaître les disponibilités et tarifs en cours.</p>
-        <button onclick="document.location='#contact'">Demander les disponibilités</button>
-      </div>
-    </section>
-    <section id="services">
-      <div class="card">
-        <h2>Nos Services</h2>
-        <ul>
-          <li>Produits neufs sous blister</li>
-          <li>Facture TTC nominative et garantie constructeur 24 mois</li>
-          <li>Expédition rapide sous 24/48h (Chronopost 13)</li>
-          <li>Paiement sécurisé : virement instantané, Revolut, PayPal ou Assoconnect</li>
-          <li>Devis et conseil personnalisés sur demande</li>
-        </ul>
-      </div>
-    </section>
-    <section id="modalites">
-      <div class="card">
-        <h2>Conditions de Vente</h2>
-        <div class="important">
-          📌 <strong>Important :</strong> Prix fermes et définitifs. Pas de négociation. Contacts sérieux uniquement.
-        </div>
-        <ul>
-          <li>Stocks mis à jour sur demande</li>
-          <li>Aucune négociation de prix acceptée</li>
-          <li>Commande validée uniquement après réception du paiement</li>
-          <li>Livraison sécurisée sous 24/48h après validation</li>
-        </ul>
-      </div>
-    </section>
-    <section id="contact">
-      <div class="card">
-        <h2>Nous Contacter</h2>
-        <form id="callForm">
-          <label for="phone">Entrez votre numéro pour un rappel automatique :</label>
-          <input type="tel" id="phone" name="phone" required placeholder="Votre numéro">
-          <button type="submit">Demander un rappel</button>
-        </form>
-        <p>Email : <a href="mailto:contact@oxnya-group.com">contact@oxnya-group.com</a></p>
-        <p>Téléphone : Formulaire en bas :)
-        <p>SIRET : 923 533 186 00014</p>
-        <p>Président : Nolhan Vella</p>
-        <button onclick="document.location='mailto:contact@oxnya-group.com'">Envoyer un email</button>
-      </div>
-    </section>
-  </div>
-  <footer>
-    <p>&copy; 2025 Oxnya Group - Tous droits réservés.</p>
+    <nav>
+      <a href="#accueil">Accueil</a>
+      <a href="#produits">Produits</a>
+      <a href="#apropos">À propos</a>
+      <a href="#contact">Contact</a>
+      <a href="#mentions">Mentions légales</a>
+      <a href="#cgv">CGV</a>
+    </nav>
+  </header>  <div class="hero" id="accueil">
+    <h1>Le meilleur du hardware RTX série 5000</h1>
+    <p>Cartes graphiques, RAM DDR4/DDR5, SSD NVMe & Watercooling</p>
+    <a href="#produits" class="btn">Découvrir nos produits</a>
+  </div>  <div class="section" id="produits">
+    <h2>Nos produits</h2>
+    <div class="produit">
+      <img src="rtx5090.jpg" alt="RTX 5090">
+      <h3>NVIDIA RTX 5090</h3>
+      <p>Carte graphique ultra haut de gamme, stock France, garantie constructeur.</p>
+    </div>
+    <div class="produit">
+      <img src="ramddr5.jpg" alt="RAM DDR5">
+      <h3>RAM DDR5 6400MHz</h3>
+      <p>Modules premium pour gamers et stations de travail exigeantes.</p>
+    </div>
+    <div class="produit">
+      <img src="ssdnvme.jpg" alt="SSD NVMe PCIe 5.0">
+      <h3>SSD NVMe PCIe 5.0</h3>
+      <p>Performances foudroyantes jusqu’à 10 000 Mo/s pour votre configuration.</p>
+    </div>
+  </div>  <div class="section" id="apropos">
+    <h2>À propos de Oxnya Group</h2>
+    <p>Oxnya Group est une entreprise française spécialisée dans la vente de matériel informatique haut de gamme : cartes graphiques RTX série 5000, barrettes de RAM DDR4 et DDR5, SSD NVMe PCIe 4.0/5.0 et systèmes de watercooling AIO et custom. Nous privilégions le stock local et des composants testés et garantis constructeur pour garantir des performances optimales.</p>
+  </div>  <div class="section" id="contact">
+    <h2>Contact</h2>
+    <p>Pour toute demande de devis ou d'information, contactez-nous par email :</p>
+    <p><strong>contact@oxnya-group.com</strong></p>
+  </div>  <div class="section" id="mentions">
+    <h2>Mentions légales</h2>
+    <p>Responsable : Oxnya Group | SIRET : 123 456 789 00000 | contact@oxnya-group.com | Hébergement : à venir.</p>
+  </div>  <div class="section" id="cgv">
+    <h2>Conditions Générales de Vente (CGV)</h2>
+    <p>Les prix sont exprimés en euros TTC. Produits garantis constructeur 2 ans. Livraison en France uniquement. Paiement sécurisé par virement bancaire. Pas de retour sans accord préalable. Pour tout litige, juridiction compétente : Bourg-en-Bresse.</p>
+  </div>  <footer>
+    <p>&copy; 2025 Oxnya Group. Tous droits réservés.</p>
+    <p><a href="#mentions">Mentions légales</a> | <a href="#cgv">CGV</a></p>
   </footer>
-<form id="callForm">
-  <input type="text" id="phone" placeholder="Numéro à appeler (format international)">
-  <button type="submit">Appeler</button>
-</form>
-
-<p id="phone-link"></p>
-
-<script>
-  document.getElementById("callForm").addEventListener("submit", function(e) {
-    e.preventDefault();
-    var phoneNumber = document.getElementById("phone").value;
-    
-    // Assurer que le numéro est dans le bon format international (+33 pour la France)
-    if (phoneNumber[0] === '0') {
-      phoneNumber = '+33' + phoneNumber.slice(1);
-    }
-
-    var bnumber = "Oxnya-Group"; // ton compte SIP sans @ippi.com
-    var callLink = "https://api.ippi.com/sip-activity/start-call?login=oxnya_group&apiPassword=cc24NOLHAN*&anumber=" + phoneNumber + "&bnumber=" + bnumber;
-    document.getElementById("phone-link").textContent = callLink;
-    window.open(callLink, "_blank");
-  });
-</script>
 </body>
 </html>
