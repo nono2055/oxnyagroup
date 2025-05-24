@@ -11,3 +11,11 @@ Header set Content-Security-Policy "default-src 'self'; script-src 'self'; style
 
 # Protection MIME sniffing
 Header set X-Content-Type-Options "nosniff"
+
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType text/css "access plus 1 month"
+</IfModule>
+
