@@ -1,0 +1,147 @@
+:root {
+  --bg: #18171d;
+  --accent: #e100ff;
+  --accent2: #9b59b6;
+  --text: #f3f3f3;
+  --card-bg: #232136;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Segoe UI', Arial, sans-serif;
+  margin: 0;
+  min-height: 100vh;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background: linear-gradient(90deg, #18171d 60%, var(--accent2) 100%);
+  box-shadow: 0 0 24px var(--accent2);
+}
+
+.logo {
+  height: 70px;
+  filter: drop-shadow(0 0 18px var(--accent));
+}
+
+nav {
+  display: flex;
+  gap: 1.5rem;
+}
+nav a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1em;
+  transition: color 0.2s;
+}
+nav a:hover {
+  color: var(--accent2);
+}
+
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1rem 3rem 1rem;
+}
+
+.hero {
+  text-align: center;
+  margin: 4rem 0 2rem 0;
+}
+.hero-title {
+  font-size: 2.5rem;
+  color: var(--accent);
+  letter-spacing: 2px;
+  text-shadow: 0 0 16px var(--accent2);
+}
+.hero-desc {
+  font-size: 1.3rem;
+  margin-top: 1.5rem;
+  color: var(--text);
+}
+.paiement {
+  margin-top: 2rem;
+  color: var(--accent2);
+  font-size: 1.1em;
+}
+
+#produits-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 2rem;
+  padding: 2rem 0;
+}
+
+.produit-card {
+  background: var(--card-bg);
+  border-radius: 1.2rem;
+  box-shadow: 0 0 20px 2px var(--accent2);
+  padding: 1.5rem;
+  color: var(--text);
+  transition: transform 0.2s;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.produit-card:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 0 30px 4px var(--accent);
+}
+.produit-card h4 {
+  color: var(--accent);
+  margin-bottom: 0.7em;
+}
+.btn-demander-prix {
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.7em 1.5em;
+  font-size: 1em;
+  cursor: pointer;
+  margin-top: 1em;
+  box-shadow: 0 0 10px var(--accent2);
+  transition: background 0.2s, transform 0.2s;
+}
+.btn-demander-prix:hover {
+  background: linear-gradient(90deg, var(--accent2), var(--accent));
+  transform: translateY(-2px) scale(1.04);
+}
+
+section.liste-produits ul {
+  list-style: disc inside;
+  margin-bottom: 2em;
+}
+
+footer {
+  background: #191622;
+  color: var(--accent2);
+  text-align: center;
+  padding: 1.2rem 0 0.7rem 0;
+  margin-top: 2rem;
+  font-size: 1em;
+  box-shadow: 0 0 16px var(--accent2);
+}
+
+@media (max-width: 700px) {
+  header, nav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.8rem;
+  }
+  .logo {
+    height: 50px;
+  }
+  main {
+    padding: 1rem 0.3rem 2rem 0.3rem;
+  }
+  #produits-list {
+    grid-template-columns: 1fr;
+    padding: 1rem 0;
+  }
+}

@@ -1,0 +1,48 @@
+[
+  {
+    "categorie": "Cartes graphiques NVIDIA série 5000",
+    "produits": [
+      { "nom": "NVIDIA RTX 5060", "description": "Carte graphique gaming, 8 Go GDDR7." },
+      { "nom": "NVIDIA RTX 5060 Ti 8GB", "description": "Version Ti, 8 Go GDDR7, performances accrues." },
+      { "nom": "NVIDIA RTX 5060 Ti 16GB", "description": "Version Ti, 16 Go GDDR7, idéale pour la création." },
+      { "nom": "NVIDIA RTX 5070", "description": "Puissance intermédiaire, 12 Go GDDR7." },
+      { "nom": "NVIDIA RTX 5070 Ti", "description": "Version Ti, 16 Go GDDR7, RayTracing avancé." },
+      { "nom": "NVIDIA RTX 5080", "description": "Haute performance, 16 Go GDDR7, gaming 4K." },
+      { "nom": "NVIDIA RTX 5090", "description": "Le haut de gamme, 24 Go GDDR7, IA et RayTracing." }
+    ]
+  },
+  {
+    "categorie": "Cartes graphiques AMD série 9000",
+    "produits": [
+      { "nom": "AMD Radeon RX 9070", "description": "Performances gaming nouvelle génération, 16 Go GDDR6." },
+      { "nom": "AMD Radeon RX 9070 XT", "description": "Version XT, 20 Go GDDR6, boostée pour le 4K." }
+    ]
+  },
+  {
+    "categorie": "RAM",
+    "produits": [
+      { "nom": "DDR4", "description": "Modules RAM DDR4 toutes capacités." },
+      { "nom": "DDR5", "description": "Modules RAM DDR5 nouvelle génération." }
+    ]
+  },
+  {
+    "categorie": "SSD",
+    "produits": [
+      { "nom": "SSD SATA", "description": "Stockage rapide et fiable au format SATA." },
+      { "nom": "SSD NVMe", "description": "Stockage ultra-rapide NVMe PCIe." }
+    ]
+  },
+  {
+    "categorie": "Boîtiers PC",
+    "produits": [
+      { "nom": "Boîtiers PC", "description": "Nombreux modèles adaptés à tous les besoins." }
+    ]
+  },
+  {
+    "categorie": "Watercooling",
+    "produits": [
+      { "nom": "AIO (All-in-One)", "description": "Systèmes de watercooling tout-en-un." },
+      { "nom": "Custom", "description": "Solutions de watercooling sur-mesure." }
+    ]
+  }
+]
