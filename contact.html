@@ -19,18 +19,32 @@
   </header>
   <main>
     <h2>Contactez-nous</h2>
-    <form action="mailto:contact@oxnya-group.com" method="post" enctype="text/plain">
-      <label for="nom">Nom :</label><br>
-      <input type="text" id="nom" name="nom" required><br><br>
-      <label for="email">Email :</label><br>
-      <input type="email" id="email" name="email" required><br><br>
-      <label for="message">Votre demande :</label><br>
-      <textarea id="message" name="message" rows="5" required></textarea><br><br>
-      <button type="submit" class="btn-demander-prix">Envoyer</button>
-    </form>
-    <div style="margin-top:2em;">
-      <strong>Contact par e-mail uniquement :</strong><br>
-      <a href="mailto:contact@oxnya-group.com" style="color:var(--accent);font-weight:bold;">contact@oxnya-group.com</a>
+<form
+  action="https://formspree.io/f/xgvkbgqv"
+  method="POST"
+>
+  <label for="email">Mail :</label><br>
+  <input type="email" id="email" name="email" required><br><br>
+
+  <label for="produit">Produit demandé (modèle précis) :</label><br>
+  <input type="text" id="produit" name="Produit demandé" required><br><br>
+
+  <label for="budget">Avez-vous un budget cohérent ?</label><br>
+  <select id="budget" name="Budget cohérent" required>
+    <option value="">-- Sélectionnez --</option>
+    <option value="Oui">Oui</option>
+    <option value="Non">Non</option>
+    <option value="Je ne sais pas">Je ne sais pas</option>
+  </select><br><br>
+
+  <label for="nom">Nom Prénom :</label><br>
+  <input type="text" id="nom" name="Nom Prénom" required><br><br>
+
+  <label for="demande">Demande :</label><br>
+  <textarea id="demande" name="Demande" rows="5" required></textarea><br><br>
+
+  <button type="submit" class="btn-demander-prix">Envoyer</button>
+</form>
     </div>
   </main>
   <footer>
