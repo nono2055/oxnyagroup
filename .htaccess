@@ -1,0 +1,13 @@
+# Redirige vers HTTPS
+RewriteEngine On
+RewriteCond %{HTTPS} !=on
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Protection clickjacking
+Header always set X-Frame-Options "SAMEORIGIN"
+
+# Protection XSS
+Header set Content-Security-Policy "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:;"
+
+# Protection MIME sniffing
+Header set X-Content-Type-Options "nosniff"
