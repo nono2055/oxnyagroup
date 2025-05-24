@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Produits - Oxnya Group</title>
+  <title>Nos produits - Oxnya Group</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -19,11 +19,76 @@
   </header>
   <main>
     <h2>Nos produits</h2>
-    <div id="produits-list"></div>
+
+    <section class="famille-produit">
+      <h3>Cartes graphiques NVIDIA série 5000</h3>
+      <ul class="liste-modele">
+        <li>
+          RTX 5060 <button class="btn-demander-prix" onclick="window.location.href='contact.html?produit=RTX 5060'">Demander les prix</button>
+        </li>
+        <li>
+          RTX 5060 Ti 8GB <button class="btn-demander-prix" onclick="window.location.href='contact.html?produit=RTX 5060 Ti 8GB'">Demander les prix</button>
+        </li>
+        <li>
+          RTX 5060 Ti 16GB <button class="btn-demander-prix" onclick="window.location.href='contact.html?produit=RTX 5060 Ti 16GB'">Demander les prix</button>
+        </li>
+        <li>
+          RTX 5070 <button class="btn-demander-prix" onclick="window.location.href='contact.html?produit=RTX 5070'">Demander les prix</button>
+        </li>
+        <li>
+          RTX 5070 Ti <button class="btn-demander-prix" onclick="window.location.href='contact.html?produit=RTX 5070 Ti'">Demander les prix</button>
+        </li>
+        <li>
+          RTX 5080 <button class="btn-demander-prix" onclick="window.location.href='contact.html?produit=RTX 5080'">Demander les prix</button>
+        </li>
+        <li>
+          RTX 5090 <button class="btn-demander-prix" onclick="window.location.href='contact.html?produit=RTX 5090'">Demander les prix</button>
+        </li>
+      </ul>
+    </section>
+
+    <section class="famille-produit">
+      <h3>Cartes graphiques AMD série 9000</h3>
+      <ul class="liste-modele">
+        <li>
+          Radeon RX 9070 <button class="btn-demander-prix" onclick="window.location.href='contact.html?produit=Radeon RX 9070'">Demander les prix</button>
+        </li>
+        <li>
+          Radeon RX 9070 XT <button class="btn-demander-prix" onclick="window.location.href='contact.html?produit=Radeon RX 9070 XT'">Demander les prix</button>
+        </li>
+      </ul>
+    </section>
+
+    <section class="famille-produit">
+      <h3>RAM</h3>
+      <p>DDR4 et DDR5 pour toutes les plateformes, fréquences et capacités variées.</p>
+      <button class="btn-demander-prix" onclick="window.location.href='contact.html?produit=RAM DDR4/DDR5'">Demander les prix</button>
+    </section>
+
+    <section class="famille-produit">
+      <h3>SSD</h3>
+      <p>SATA et NVMe, toutes capacités, pour des performances optimales.</p>
+      <button class="btn-demander-prix" onclick="window.location.href='contact.html?produit=SSD SATA/NVMe'">Demander les prix</button>
+    </section>
+
+    <section class="famille-produit">
+      <h3>Boîtiers PC</h3>
+      <p>Boîtiers ATX, Micro-ATX, Mini-ITX, designs variés et compatibles watercooling.</p>
+      <button class="btn-demander-prix" onclick="window.location.href='contact.html?produit=Boîtiers PC'">Demander les prix</button>
+    </section>
+
+    <section class="famille-produit">
+      <h3>Watercooling</h3>
+      <p>Solutions AIO (tout-en-un) et custom (sur-mesure) pour un refroidissement efficace et silencieux.</p>
+      <button class="btn-demander-prix" onclick="window.location.href='contact.html?produit=Watercooling AIO/Custom'">Demander les prix</button>
+    </section>
+
+    <div style="margin-top:2em; color:var(--accent2); font-size:1em;">
+      Tous nos produits sont garantis constructeur. Paiement sécurisé via Stripe, possibilité de paiement en plusieurs fois avec Klarna.
+    </div>
   </main>
   <footer>
     <p>&copy; 2025 Oxnya Group. Tous droits réservés.</p>
   </footer>
-  <script src="produits.js"></script>
 </body>
 </html>
